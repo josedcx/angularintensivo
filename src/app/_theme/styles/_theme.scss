@@ -1,0 +1,11 @@
+@import '~@angular/material/theming';
+@include mat-core();
+@import 'theme-reset';
+
+.app{
+    &.indigo-light{
+        @import "skins/indigo-light";
+        @include angular-material-theme($indigo-light-theme);
+        @include theme-reset($indigo-light-theme);
+    }
+}

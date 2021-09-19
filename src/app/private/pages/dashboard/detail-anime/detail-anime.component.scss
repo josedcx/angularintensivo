@@ -1,0 +1,15 @@
+.heroes li {
+  list-style-type: none;
+  padding: 0.8em 0.7em 0 0.7em;
+
+}
+
+::ng-deep md-grid-tile.mat-grid-tile .mat-figure {
+    align-items: initial;  /*vertical alignment*/
+    justify-content: initial;  /*horizontal alignment*/
+}
+
+ .title-tem >::ng-deep .mat-figure{
+  align-items: flex-start;
+  justify-content: flex-start;
+}

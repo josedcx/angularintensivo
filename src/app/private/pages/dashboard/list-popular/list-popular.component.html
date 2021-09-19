@@ -1,0 +1,51 @@
+<div fxFlex="100" fxLayout="column">
+  <!-- TOP -->
+  <div fxFlex="100" class="p-2">
+    <mat-card class="secondary-text-color p-4">
+      <mat-card-header fxLayoutAlign="center">
+        <mat-card-subtitle>
+          <h2>Más populares</h2>
+        </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item *ngFor="let item of listTopAnime">
+            <img matListAvatar src="{{item.image_url}}">
+            {{item.rank}}
+            <h3 matLine>
+              <a [routerLink]="['/detail/',item.mal_id]">{{item.title}}</a>
+            </h3>
+            <p matLine>
+              <span> {{item.type}}, {{item.episodes}} eps, {{item.score}} score </span>
+            </p>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <!-- POPULAR -->
+  <div fxFlex="100" class="p-2">
+    <mat-card class="secondary-text-color p-4">
+      <mat-card-header fxLayoutAlign="center">
+        <mat-card-subtitle>
+          <h2>Próximamente</h2>
+        </mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item *ngFor="let item of topUpcoming">
+            <img matListAvatar src="{{item.image_url}}">
+            {{item.rank}}
+            <h3 matLine>
+              <a [routerLink]="['/detail/',item.mal_id]">{{item.title}}</a>
+            </h3>
+            <p matLine>
+              <span> {{item.type}}, {{item.episodes}} eps, {{item.score}} score </span>
+            </p>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

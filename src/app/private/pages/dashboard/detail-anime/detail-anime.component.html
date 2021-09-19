@@ -1,0 +1,106 @@
+<div class="p-2" *ngIf="detailInfo">
+  <div fxLayout="row wrap">
+    <div fxFlex="100" fxFlex.gt-sm="20" class="p-2">
+      <div fxFlex="100" fxLayout="column">
+        <!-- TOP -->
+        <div fxFlex="100" class="p-2">
+          <mat-card class="secondary-text-color p-4">
+            <mat-card-content>
+              <img mat-card-image src="{{detailInfo.image_url}}">
+              <mat-card-subtitle>
+                <h2>Información</h2>
+              </mat-card-subtitle>
+
+              <ul class="heroes">
+                <li>
+                  <strong>Tipo:</strong> {{detailInfo.type}}
+                </li>
+                <li><strong>Episodios:</strong> {{detailInfo.episodes}}
+                </li>
+                <li><strong>Estado: </strong> {{detailInfo.status}}
+                </li>
+                <li><strong>Productor:</strong>
+                  <span *ngFor="let item of detailInfo.producers">
+                    {{item.name}}.
+                  </span>
+                </li>
+                <li><strong>Estudio:</strong>
+                  <span *ngFor="let item of detailInfo.studios">
+                    {{item.name}}.
+                  </span>
+                </li>
+                <li><strong>Generos:</strong>
+                  <span *ngFor="let item of detailInfo.genres">
+                    {{item.name}}.
+                  </span>
+                </li>
+                <li><strong>Tema:</strong>
+                  <span *ngFor="let item of detailInfo.themes">
+                    {{item.name}}.
+                  </span>
+                </li>
+                <li><strong>Duración:</strong> {{detailInfo.duration}}
+                </li>
+                <li><strong>Rating:</strong> {{detailInfo.rating}}</li>
+              </ul>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+        <!-- STATISTIC -->
+        <div fxFlex="100" class="p-2">
+          <mat-card class="secondary-text-color p-4">
+            <mat-card-content>
+              <mat-card-subtitle>
+                <h2>Estadisticas</h2>
+              </mat-card-subtitle>
+              <ul class="heroes">
+                <li>
+                  <strong>Ranking:</strong> {{detailInfo.score}}
+                </li>
+                <li>
+                  <strong>Popularidad:</strong> {{detailInfo.popularity}}
+                </li>
+                <li>
+                  <strong>Miembros: </strong> {{detailInfo.members}}
+                </li>
+                <li>
+                  <strong>Favoritos:</strong> {{detailInfo.favorites}}
+                </li>
+              </ul>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+
+    </div>
+    <div fxFlex="100" fxFlex.gt-sm="80" class="p-2">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{detailInfo.title}}
+          </mat-card-title>
+          <mat-card-subtitle>
+            {{detailInfo.title_english}}
+          </mat-card-subtitle>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+          <h2>Sinopsis</h2>
+          <p>{{detailInfo.synopsis}}</p>
+
+          <h2>Personajes</h2>
+          <mat-grid-list cols="10" rowHeight="1:1">
+            <mat-grid-tile class="title-tem" *ngFor="let item of listCharacters">
+              <div class="item-content">
+                <mat-card-subtitle>
+                  {{item.name}}
+                </mat-card-subtitle>
+                <img width="100%" src="{{item.image_url}}">
+              </div>
+            </mat-grid-tile>
+          </mat-grid-list>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
